@@ -1,38 +1,38 @@
-# write your code here
-import random
-print("Enter the number of friends joining (including you):")
-total_friends = int(input())
-
-all_friends = {}
-if total_friends <= 0:
-    print("No one is joining for the party")
-if total_friends >= 1:
-    print("Enter the name of every friend (including you)")
-    for each in range(total_friends):
-        name = input()
-        all_friends[name.title()] = 0
-    #print(all_friends)
-
-    print("Enter the total Bill value")
-    bill = float(input())
-    print('Do you want to use the "Who is lucky?" feature? Write Yes/No:')
-    lucky = str(input())
-    if lucky =='Yes':
-        luckyperson = random.choice(list(all_friends.keys()))
-        print("{0} is the lucky one!".format(luckyperson))
-        total_friends -= 1
-        luckyperson = ''
-    else:
-        print("No one is going to be lucky")
-
-    split_bill = round((bill / total_friends), 2)
-    for friend in all_friends:
-        if friend == luckyperson:
-            luckbill = 0
-            all_friends.update({friend: luckbill})
-        else:
-            all_friends.update({friend: split_bill})
-    print(all_friends)
+# # write your code here
+# import random
+# print("Enter the number of friends joining (including you):")
+# total_friends = int(input())
+#
+# all_friends = {}
+# if total_friends <= 0:
+#     print("No one is joining for the party")
+# if total_friends >= 1:
+#     print("Enter the name of every friend (including you)")
+#     for each in range(total_friends):
+#         name = input()
+#         all_friends[name.title()] = 0
+#     #print(all_friends)
+#
+#     print("Enter the total Bill value")
+#     bill = float(input())
+#     print('Do you want to use the "Who is lucky?" feature? Write Yes/No:')
+#     lucky = str(input())
+#     if lucky =='Yes':
+#         luckyperson = random.choice(list(all_friends.keys()))
+#         print("{0} is the lucky one!".format(luckyperson))
+#         total_friends -= 1
+#         luckyperson = ''
+#     else:
+#         print("No one is going to be lucky")
+#
+#     split_bill = round((bill / total_friends), 2)
+#     for friend in all_friends:
+#         if friend == luckyperson:
+#             luckbill = 0
+#             all_friends.update({friend: luckbill})
+#         else:
+#             all_friends.update({friend: split_bill})
+#     print(all_friends)
 
 # side_a = int(input())
 # side_b = int(input())
@@ -650,3 +650,21 @@ if total_friends >= 1:
 #
 # random.seed(n)
 # print(random.uniform(0, 1))
+
+
+class City:
+    all_cities = []
+
+    def __init__(self, name, year):
+        self.name = name
+        self.year = year
+
+ny = City("New York", 1624)
+ny.all_cities.append("New York")
+
+stockholm = City("Stockholm", 1187)
+stockholm.all_cities = ["Stockholm"]
+stockholm.all_cities.append("Stockholm")
+print(stockholm.all_cities)
+print(ny.all_cities)
+print(City.all_cities)
